@@ -36,6 +36,14 @@ class Item {
     items.splice(itemIndex, 1);
 
   }
+
+  /** */
+  static updateInfo(name, req) {
+    const item = items.find(item => item.name === name);
+
+    item.name = req.name || item.name;
+    item.price = req.price || item.price;
+  }
 }
 
 module.exports = Item;

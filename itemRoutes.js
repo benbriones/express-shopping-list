@@ -71,10 +71,11 @@ router.patch('/:name', function (req, res) {
   const name = req.params.name;
 
   const foundItem = Item.getItem(name);
-
+  // TODO: Add update method on the class
   if (foundItem) {
-    foundItem.name = req.body.name;
-    foundItem.price = req.body.price;
+
+    Item.updateInfo(name, req.body);
+
   } else {
     throw new NotFoundError("This item was not found");
   }
@@ -90,7 +91,7 @@ router.patch('/:name', function (req, res) {
 
 
 /**
- *
+ * Delete item
  */
 router.delete('/:name', function (req, res) {
   const name = req.params.name;
