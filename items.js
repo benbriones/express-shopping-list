@@ -29,7 +29,7 @@ class Item {
     return foundItem;
   }
 
-  /** */
+  /** deletes an item given a name  */
   static deleteItem(name) {
     const itemIndex = items.findIndex(item => item.name === name);
 
