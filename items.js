@@ -20,9 +20,22 @@ class Item {
     items.push(item);
   }
 
+  /** Return an item if foind in items
+   * Returns false if not found
+   */
+  static getItem(name) {
+    const foundItem = items.find(item => item.name === name);
 
+    return foundItem;
+  }
 
+  /** */
+  static deleteItem(name) {
+    const itemIndex = items.findIndex(item => item.name === name);
 
+    items.splice(itemIndex, 1);
+
+  }
 }
 
 module.exports = Item;
